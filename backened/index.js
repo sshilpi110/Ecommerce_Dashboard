@@ -23,6 +23,21 @@ app.post("/register", async(req, res) => {
     }
 })
 
+app.post("/login",async (req,res)=>{
+  const {email,password}=(req.body)
+  try{
+    const user=await UserModel.find({email,password})
+    if(user.length>0){
+        res.send(user)
+    }else{
+        res.send({"msg":" wrong credential"})
+        
+    }
+  }catch(err){
+    res.send({"msg":"something went wrong","err":err.message})
+        
+  }
+})
 
 
 app.listen(4500, () => {
