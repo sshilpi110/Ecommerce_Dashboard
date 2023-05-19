@@ -9,11 +9,11 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
     useEffect(() => {
-        const auth = localStorage.getItem("loginUser")
+        const auth = localStorage.getItem("user")
         if (auth) {
             navigate("/")
         }
-    })
+    }, [])
 
     const handleLogin = async () => {
         console.log(email, password)
@@ -27,8 +27,8 @@ const Login = () => {
         });
         result = await result.json();
         console.log(result)
-        if(result.name){
-            localStorage.setItem("loginUser", JSON.stringify(result))
+        if(result[0].name){
+            localStorage.setItem("user",JSON.stringify(result))
             navigate("/")
         }else{
             alert("please enter correct details")

@@ -19,6 +19,16 @@ h1 {
   text-align: center;
 }
 
+.nav-right{
+  text-align: right;
+}
+.logo{
+  width: 45px;
+  border-radius: 50%;
+  float: left;
+  margin:3px;
+}
+
 /* -----signup----- */
 
 .inputField {
