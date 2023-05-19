@@ -1,12 +1,12 @@
 import React from "react";
-import {Link ,useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 const Navbar = () => {
-  const navigate=useNavigate()
-    const logout=()=>{
+    const navigate = useNavigate()
+    const logout = () => {
         localStorage.clear()
-       navigate("/signup")
+        navigate("/signup")
     }
-    const auth=localStorage.getItem('registeredUser')
+    const auth = localStorage.getItem('registeredUser')
 
     return (
         <>
@@ -16,9 +16,16 @@ const Navbar = () => {
                     <li><Link to="/add">add product </Link></li>
                     <li><Link to="/update">update product </Link></li>
                     <li><Link to="/profile">Profile </Link></li>
-                    <li>{auth ? <Link onClick={logout} to="/signup">Logout </Link> : <Link to="/signup">SignUp </Link>}</li>
 
-                    <li><Link to="/login">Login </Link></li>
+
+                    {
+                        auth ? <li><Link onClick={logout} to="/signup">Logout</Link></li>
+                            :
+                            <>
+                                <li><Link to="/profile">SignUp </Link></li>
+                                <li><Link to="/profile">Login </Link></li>
+                            </>
+                    }
 
 
                 </ul>

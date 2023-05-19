@@ -9,7 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
     useEffect(() => {
-        const auth = localStorage.getItem("registeredUser")
+        const auth = localStorage.getItem("loginUser")
         if (auth) {
             navigate("/")
         }
@@ -27,12 +27,13 @@ const Login = () => {
         });
         result = await result.json();
         console.log(result)
-        if (result.name) {
-            localStorage.setItem("registeredUser", JSON.stringify(result))
+        if(result.name){
+            localStorage.setItem("loginUser", JSON.stringify(result))
             navigate("/")
-        } else {
+        }else{
             alert("please enter correct details")
         }
+        
 
     }
     return (
