@@ -1,7 +1,8 @@
 
 
 import { Routes, Route } from "react-router-dom"
-import SignUp from "./SignUp"
+import SignUp from "./SignUp";
+import Login from './Login';
 import PrivateRoutes from "./PrivateRoutes";
 
 const AllRoutes = () => {
@@ -16,6 +17,8 @@ const AllRoutes = () => {
 
             </Route>
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+
 
         </Routes>
     )
