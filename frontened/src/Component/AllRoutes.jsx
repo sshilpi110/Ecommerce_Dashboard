@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import SignUp from "./SignUp"
 import Login from "./Login"
 import AddProduct from "./AddProduct"
+import ProductList from "./ProductList"
 import PrivateRoute from "./PrivateRoute"
 
 
@@ -12,7 +13,7 @@ const AllRoutes = () => {
             <Routes>
 
                 <Route element={<PrivateRoute />}>
-                    <Route path="/" element={<h1>product listing</h1>}></Route>
+                    <Route path="/" element={<ProductList/>}></Route>
                     <Route path="/add" element={<AddProduct />}></Route>
                     <Route path="/update" element={<h1>Update product listing</h1>}></Route>
                     <Route path="/profile" element={<h1>profile listing</h1>}></Route>
