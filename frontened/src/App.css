@@ -1,13 +1,50 @@
 .ul-nav li{
   display:inline-block;
-  text-decoration: none;
   padding: 10px;
 }
 .ul-nav{
   justify-content: space-between;
 
 }
+.ul-nav li a{
+  color:#fff;
+  padding: 5px;
+  text-decoration: none;
 
+}
+.ul-nav {
+  background-color: skyblue;
+  margin: 0;
+  padding: 5px;
+}
+
+/* //signup style /// */
+
+.input-box{
+  display: block;
+  padding: 7px;
+  margin: 25px;
+  width: 300px;
+  border: 1px solid skyblue;
+
+}
+.signupButton{
+  margin: 20px;
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+  background-color: skyblue;
+  border: 1px solid ;
+
+}
+/* .....footer...  */
+.footer{
+position: absolute;
+bottom: 0;
+text-align: center;
+background-color: #61dafb;
+width: 100%;
+}
 h1{
   text-align: center;
 }
