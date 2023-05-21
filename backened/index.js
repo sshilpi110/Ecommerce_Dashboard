@@ -48,7 +48,11 @@ app.get("/products",async(req,res)=>{
         res.send({"msg":"product not found"})
     }
 })
+ app.delete("/delete/:id",async(req,res)=>{
+  const result= await ProductModel.deleteOne({_id:req.params.id})
+    res.send(result)
 
+ })
 
 app.listen(5500, () => {
     console.log("server is running at port 5500")
