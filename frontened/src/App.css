@@ -41,6 +41,12 @@ text-align: right;
 .product{
   margin-left: 35%;
 }
+.input-validation{
+  color:red;
+  margin-top: -20px;
+  display: block;
+  margin-left: 20px;
+}
 .signupButton, .productBtn{
   margin: 20px;
   padding: 10px;
