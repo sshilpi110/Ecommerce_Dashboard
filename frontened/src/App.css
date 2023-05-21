@@ -1,65 +1,16 @@
-.nav-ul li {
-  display: inline-block;
-  padding: 10px;
-}
-
-.nav-ul {
-  padding: 5px;
-  margin: 0;
-  background-color: skyblue;
-}
-
-.nav-ul li a {
+.ul-nav li{
+  display:inline-block;
   text-decoration: none;
-  color: white;
-  padding: 5px;
-}
-
-h1 {
-  text-align: center;
-}
-
-.nav-right{
-  text-align: right;
-}
-.logo{
-  width: 45px;
-  border-radius: 50%;
-  float: left;
-  margin:3px;
-}
-
-/* -----signup----- */
-
-.inputField {
-  display: block;
-  padding: 7px;
-  margin: auto;
-  width: 230px;
-  align-items: center;
-  border-color: skyblue;
-  border: 1px solid skyblue;
-}
-
-.signUpButton {
-  width: 130px;
   padding: 10px;
-  margin-left: 590px;
-  gap: 10px;
-  align-items: center;
-  color: white;
-  background-color: skyblue;
-  border: 1px solid;
+}
+.ul-nav{
+  justify-content: space-between;
+
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  background-color: skyblue;
+h1{
   text-align: center;
-  width: 100%;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
