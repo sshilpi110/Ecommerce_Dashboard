@@ -17,6 +17,16 @@
   margin: 0;
   padding: 5px;
 }
+.nav-right{
+text-align: right;
+}
+.logo{
+  width: 35px;
+  float: left;
+  margin: 10px;
+  border-radius: 50%;
+  
+}
 
 /* //signup style /// */
 
@@ -28,7 +38,10 @@
   border: 1px solid skyblue;
 
 }
-.signupButton{
+.product{
+  margin-left: 35%;
+}
+.signupButton, .productBtn{
   margin: 20px;
   padding: 10px;
   width: 150px;
