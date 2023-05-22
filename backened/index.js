@@ -3,7 +3,7 @@ const express = require("express")
 const cors = require("cors")
 const { connection } = require("./db/database")
 const { UserModel } = require("./db/users")
-const {ProductModel} =require("./db/product")
+const { ProductModel } = require("./db/product")
 const app = express()
 app.use(express.json())
 app.use(cors())
@@ -34,34 +34,43 @@ app.post("/login", async (req, res) => {
 
 })
 
-app.post("/add-product",async(req,res)=>{
-    let product= new ProductModel(req.body)
-    let result= await product.save()
+app.post("/add-product", async (req, res) => {
+    let product = new ProductModel(req.body)
+    let result = await product.save()
     res.send(result)
 })
 
-app.get("/products",async(req,res)=>{
-    let products= await ProductModel.find()
-    if(products.length>0){
+app.get("/products", async (req, res) => {
+    let products = await ProductModel.find()
+    if (products.length > 0) {
         res.send(products)
-    }else{
-        res.send({"msg":"product not found"})
+    } else {
+        res.send({ "msg": "product not found" })
     }
 })
- app.delete("/delete/:id",async(req,res)=>{
-  const result= await ProductModel.deleteOne({_id:req.params.id})
+app.delete("/delete/:id", async (req, res) => {
+    const result = await ProductModel.deleteOne({ _id: req.params.id })
     res.send(result)
 
- })
+})
 
- app.get("/product/:id",async(req,res)=>{
-    let result=await ProductModel.findOne({_id:req.params.id})
-    if(result){
+app.get("/product/:id", async (req, res) => {
+    let result = await ProductModel.findOne({ _id: req.params.id })
+    if (result) {
         res.send(result)
-    }else{
-        res.send({"MSG":"PRODUCT NOT FOUND"})
+    } else {
+        res.send({ "MSG": "PRODUCT NOT FOUND" })
     }
 
+})
+app.put("/update/:id", async (req, res) => {
+    let result = await ProductModel.updateOne(
+        { _id: req.params.id },
+        {
+            $set: req.body
+        }
+    )
+    res.send(result)
 })
 
 app.listen(5500, () => {
