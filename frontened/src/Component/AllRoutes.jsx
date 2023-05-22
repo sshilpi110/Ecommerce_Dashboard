@@ -4,6 +4,7 @@ import SignUp from "./SignUp"
 import Login from "./Login"
 import AddProduct from "./AddProduct"
 import ProductList from "./ProductList"
+import UpdateProduct from "./UpdateProduct"
 import PrivateRoute from "./PrivateRoute"
 
 
@@ -15,7 +16,7 @@ const AllRoutes = () => {
                 <Route element={<PrivateRoute />}>
                     <Route path="/" element={<ProductList/>}></Route>
                     <Route path="/add" element={<AddProduct />}></Route>
-                    <Route path="/update" element={<h1>Update product listing</h1>}></Route>
+                    <Route path="/update/:id" element={<UpdateProduct/>}></Route>
                     <Route path="/profile" element={<h1>profile listing</h1>}></Route>
                     <Route path="/logout" element={<h1>logout listing</h1>}></Route>
                 </Route>
