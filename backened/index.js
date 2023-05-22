@@ -54,6 +54,16 @@ app.get("/products",async(req,res)=>{
 
  })
 
+ app.get("/product/:id",async(req,res)=>{
+    let result=await ProductModel.findOne({_id:req.params.id})
+    if(result){
+        res.send(result)
+    }else{
+        res.send({"MSG":"PRODUCT NOT FOUND"})
+    }
+
+})
+
 app.listen(5500, () => {
     console.log("server is running at port 5500")
 })
