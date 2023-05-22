@@ -38,6 +38,13 @@ text-align: right;
   border: 1px solid skyblue;
 
 }
+.search-input{
+  width: 400px;
+  margin: 20px;
+  height: 40px;
+  border:1px solid skyblue;
+  padding-left: 20px;
+}
 .product{
   margin-left: 35%;
 }
