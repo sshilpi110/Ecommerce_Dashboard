@@ -73,6 +73,18 @@ app.put("/update/:id", async (req, res) => {
     res.send(result)
 })
 
+app.get("/search/:key", async (req,  res) => {
+    let result = await ProductModel.find({
+        "$or": [
+            { name: { $regex: req.params.key } },
+            { company: { $regex: req.params.key } },
+            { category: { $regex: req.params.key } }
+
+        ]
+    })
+    res.send(result)
+})
+
 app.listen(5500, () => {
     console.log("server is running at port 5500")
 })
